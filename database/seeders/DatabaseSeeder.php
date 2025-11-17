@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\InquiryExample;
 use App\Models\User;
 use App\Models\Testing;
 use Illuminate\Database\Seeder;
@@ -16,12 +17,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
         Testing::factory(50)->create();
+        InquiryExample::factory(10)->create();
     }
 }
