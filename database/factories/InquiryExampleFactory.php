@@ -19,16 +19,10 @@ class InquiryExampleFactory extends Factory
     public function definition(): array
     {
         return [
-            // $table->string('product_type');
-            // $table->string('building');
-            // $table->date('date');
-            // $table->string('customer');
-            // $table->string('status');
-            // $table->string('description');
-            // $table->date('last_update');
+
             'product_type' => fake()->sentence(rand(1,2)),
             'building' => fake()->randomElement(['Gandaria Office Tower', 'Kota Kasablanka Offie Tower']),
-            'date' => fake()->date(),
+            'date' => fake()->dateTimeBetween('2025-01-01', '2025-12-31')->format('Y-m-d'),
             'customer' => fake()->name(),
             'status' => fake()->randomElement(['on', 'open']),
             'description' => fake()->text(),
