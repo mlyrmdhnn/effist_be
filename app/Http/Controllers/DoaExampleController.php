@@ -10,7 +10,7 @@ class DoaExampleController extends Controller
 
     public function doa() {
         return response()->json([
-            'data' => DoaExample::all()
+            'data' => DoaExample::paginate(10)
         ],201);
     }
 }

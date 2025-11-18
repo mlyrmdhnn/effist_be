@@ -9,7 +9,7 @@ class SoaExampleController extends Controller
 {
     public function soa(Request $request) {
         return response()->json([
-        'data' => SoaExample::all()
+        'data' => SoaExample::paginate(10)
         ],201);
     }
 }

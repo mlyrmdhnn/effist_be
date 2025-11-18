@@ -9,7 +9,7 @@ class MbaExampleController extends Controller
 {
     public function mba() {
         return response()->json([
-            'data' => MbaExample::all()
+            'data' => MbaExample::paginate(10)
         ],201);
     }
 }

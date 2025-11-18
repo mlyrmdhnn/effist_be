@@ -24,11 +24,11 @@ class DatabaseSeeder extends Seeder
     {
 
         Testing::factory(50)->create();
-        InquiryExample::factory(10)->create();
-        SoaExample::factory(10)->create();
-        VoaExample::factory(10)->create();
-        MbaExample::factory(10)->create();
-        MaExample::factory(10)->create();
-        DoaExample::factory(10)->create();
+        InquiryExample::factory(500)->create();
+        SoaExample::factory(200)->create();
+        VoaExample::factory(200)->create();
+        MbaExample::factory(200)->create();
+        MaExample::factory(200)->create();
+        DoaExample::factory(200)->create();
     }
 }

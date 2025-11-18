@@ -9,7 +9,7 @@ class MaExampleController extends Controller
 {
     public function ma() {
         return response()->json([
-            'data' => MaExample::all()
+            'data' => MaExample::paginate(10)
         ],201);
     }
 }

@@ -9,7 +9,7 @@ class VoaExampleController extends Controller
 {
     public function voa() {
         return response()->json([
-            'data' => VoaExample::all()
+            'data' => VoaExample::paginate(10)
         ],201);
     }
 }

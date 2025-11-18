@@ -9,7 +9,7 @@ class InquiryExampleController extends Controller
 {
     public function inquiry(Request $req) {
         return response()->json([
-            'data' => InquiryExample::all()
+            'data' => InquiryExample::paginate(10)
         ],201);
     }
 }
