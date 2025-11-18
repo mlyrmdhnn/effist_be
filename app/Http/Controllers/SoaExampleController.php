@@ -10,6 +10,6 @@ class SoaExampleController extends Controller
     public function soa(Request $request) {
         return response()->json([
         'data' => SoaExample::all()
-        ]);
+        ],201);
     }
 }

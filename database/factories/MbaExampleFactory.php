@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SoaExample>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MbaExample>
  */
-class SoaExampleFactory extends Factory
+class MbaExampleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,22 +17,18 @@ class SoaExampleFactory extends Factory
     public function definition(): array
     {
         return [
+            // $table->id();
             // $table->integer('refer_number');
             // $table->date('date_agreement');
             // $table->string('customer');
-            // $table->string('office');
-            // $table->string('type');
             // $table->string('created_by');
-            // $table->string('status_soa');
+            // $table->string('status_mba');
             // $table->timestamps();
             'refer_number' => fake()->randomDigit(5, true),
             'date_agreement' => fake()->dateTimeBetween('2025-01-01', '2025-12-31')->format('Y-m-d'),
             'customer' => fake()->company(),
-            'office' => fake()->randomElement(['Single Room', 'Multiple Room']),
-            'type' => fake()->randomDigit(3, true),
             'created_by' => fake()->name(),
-            'status_soa' => fake()->randomElement(['Renewal', 'Cancel', 'Deal', 'Not deal'])
-
+            'status_mba' => fake()->randomElement(['Deal', 'Not Deal', 'Cancel']),
         ];
     }
 }

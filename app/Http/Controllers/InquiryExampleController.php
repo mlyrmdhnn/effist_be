@@ -10,6 +10,6 @@ class InquiryExampleController extends Controller
     public function inquiry(Request $req) {
         return response()->json([
             'data' => InquiryExample::all()
-        ]);
+        ],201);
     }
 }

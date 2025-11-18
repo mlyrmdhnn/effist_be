@@ -27,7 +27,7 @@ class VoaExampleFactory extends Factory
             // $table->timestamps();
             'refer_number' => fake()->randomDigit(4, true),
             'date_agreement' => fake()->dateTimeBetween('2025-01-01', '2025-12-31')->format('Y-m-d'),
-            'customer' => fake()->name(),
+            'customer' => fake()->company(),
             'service' => fake()->randomElement(['CORPORATE IDENTITY SERVICE', 'CORPORATE IDENTITY SERVICE PLUS', 'MAILING ADDRESS SERVICE']),
             'created_by' => fake()->name(),
             'status_voa' => fake()->randomElement(['Deal', 'Not deal', 'Renewal', 'Cancel'])

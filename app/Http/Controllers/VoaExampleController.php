@@ -10,6 +10,6 @@ class VoaExampleController extends Controller
     public function voa() {
         return response()->json([
             'data' => VoaExample::all()
-        ]);
+        ],201);
     }
 }

@@ -2,11 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\DoaExample;
 use App\Models\User;
 use App\Models\Testing;
 use App\Models\SoaExample;
 use App\Models\VoaExample;
 use App\Models\InquiryExample;
+use App\Models\MaExample;
+use App\Models\MbaExample;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -24,6 +27,8 @@ class DatabaseSeeder extends Seeder
         InquiryExample::factory(10)->create();
         SoaExample::factory(10)->create();
         VoaExample::factory(10)->create();
-
+        MbaExample::factory(10)->create();
+        MaExample::factory(10)->create();
+        DoaExample::factory(10)->create();
     }
 }
