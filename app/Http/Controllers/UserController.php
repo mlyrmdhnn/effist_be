@@ -26,9 +26,12 @@ class UserController extends Controller
             ],404);
         }
 
+        $token = $user->createToken('login-token')->plainTextToken;
+
         return response()->json([
             'status' => 'ok',
             'msg' => 'success',
+            'token' => $token,
             'data' => $user
         ],201);
     }
@@ -51,9 +54,18 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function logout(Request $request)
     {
-        //
+        $token = $request->user()->currentAccessToken();
+
+        if($token) {
+            $token->delete();
+        }
+
+        return response()->json([
+            'status' => 'ok',
+            'msg' => 'Success Logout'
+        ],201);
     }
 
     /**
