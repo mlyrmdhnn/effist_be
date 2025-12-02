@@ -7,11 +7,22 @@ use Illuminate\Http\Request;
 
 class AdditionalServicesController extends Controller
 {
-    public function additionalServices(Request $request) {
+    public function additionalServices(Request $req) {
+
+        $search = $req->search;
+
+        $query = AdditionalServices::query();
+
+        $query->when($search, function ($q) use ($search) {
+            $q->where('service_name', 'LIKE', "%$search%")
+              ->orWhere('price', 'LIKE', "%$search%")
+              ->orWhere('remark', 'LIKE', "%$search%");
+        });
+
         return response()->json([
             'status' => 'ok',
             'msg' => 'success',
-            'data' => AdditionalServices::paginate(10)
+            'data' => $query->paginate(10)->appends(['search' => $query])
         ],201);
     }
 }

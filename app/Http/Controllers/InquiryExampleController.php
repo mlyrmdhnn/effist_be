@@ -8,8 +8,18 @@ use Illuminate\Http\Request;
 class InquiryExampleController extends Controller
 {
     public function inquiry(Request $req) {
+        $search = $req->search;
+
+        $query = InquiryExample::query();
+
+        $query->when($search, function ($q) use ($search) {
+            $q->where('product_type', 'LIKE', "%$search%")
+              ->orWhere('building', 'LIKE', "%$search%")
+              ->orWhere('customer', 'LIKE', "%$search%");
+        });
+
         return response()->json([
-            'data' => InquiryExample::paginate(10)
+            'data' => $query->paginate(10)->appends(['search' => $search])
         ],201);
     }
 }
